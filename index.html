@@ -12,14 +12,16 @@
         .title-top{ margin-top:50px; }
         .title-header{ width:100%; display:flex; height:380px;}
         .title-header img{ width:100%; }
-        .title-font{ width:100%; }
-        .title-font ul{ width:100%; text-align:center; display:flex; justify-content: center; background-color:#487fd9; }
+        .title-font{ width:100%; background-color:#487fd9; }
+        .title-font ul{ width:80%; margin:0 auto; text-align:center; display:flex; justify-content: center; }
         .title-font ul div{ flex:1; text-align:center; }
         .title-font ul li:hover{ background-color:cornflowerblue; }
         .title-font ul li{ float:left; padding:0px; width:100%; line-height:30px; cursor: pointer; font-size:16px; font-weight:700; color:white; }
-        .switch-img{ height:300px; width:100%; border:1px solid #ccc; }
+        .switch-img{ height:300px; width:75%; border:1px solid #ccc; display:flex; margin:0 auto; }
         /* switch-other */
-        .switch-other{ height:300px; width:100%; border:1px solid #ccc; }
+        .switch-other{ height:300px; width:98%; border:1px solid #ccc; margin:0 auto;}
+        .other-left{ flex:1; border:1px solid #ccc;}
+        .other-right{ flex:1; border:1px solid #ccc; }
         .switch-hr{ height:20px; width:100%; background-color:#487fd9; margin-top:10px; margin-bottom:10px; border-radius:5px; }
         /* footer */
         .foot-link{ width:98%; margin:0 auto;  }
@@ -54,6 +56,18 @@
     </div>
     <div class="switch-img">
         <!-- 图片/院内新闻列表 -->
+        <div class="other-left">
+            轮播图
+        </div>
+        <div class="other-right">
+            {pc:content action="lists" catid="10" order="listorder DESC" num="4" return="data"}
+            <ul>
+                {loop $data $val}
+                <li><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span>{date('Y-m-d', $val[updatetime])}</span></li>
+                {/loop}
+            </ul>
+            {/pc}
+        </div>
     </div>
     <div class="switch-hr"></div>
     <div class="switch-other">
