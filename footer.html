@@ -43,13 +43,22 @@ layui.use(['carousel', 'form'], function () {
     var carousel = layui.carousel;
     var form = layui.form;
     carousel.render({
-        elem:'#test1',
+        elem:'#active1',
         arrow:'arrow',
         indicator:'none',
         interval: 1800,
         anim: 'fade',
         height: '400px'
     });
+    carousel.render({
+        elem:'#active2',
+        arrow:'arrow',
+        indicator:'none',
+        interval:1800,
+        anim:'fade',
+        width:'100%',
+        height:'100%',
+    })
 })
 </script>
 </body>
