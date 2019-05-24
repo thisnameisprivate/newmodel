@@ -6,7 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>广元协和医院</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{APP_PATH}/statics/simple/layui/css/layui.css">
     <style type="text/css">
+        /* 调整图标大小 */
+        .glyphicon{font-size:20px;}
         *{ list-style:none; margin:0; padding:0; text-decoration:none; }
         .container{ width:98%; margin:0 auto; }
         .title-top{ margin-top:50px; }
@@ -17,11 +21,12 @@
         .title-font ul div{ flex:1; text-align:center; }
         .title-font ul li:hover{ background-color:cornflowerblue; }
         .title-font ul li{ float:left; padding:0px; width:100%; line-height:30px; cursor: pointer; font-size:16px; font-weight:700; color:white; }
-        .switch-img{ height:300px; width:75%; border:1px solid #ccc; display:flex; margin:0 auto; }
+        .switch-img{ height:400px; width:75%; display:flex; margin:0 auto; margin-top:20px; }
         /* switch-other */
         .switch-other{ height:300px; width:98%; border:1px solid #ccc; margin:0 auto;}
-        .other-left{ flex:1; border:1px solid #ccc;}
-        .other-right{ flex:1; border:1px solid #ccc; }
+        .other-left{ flex:1; }
+        .other-right{ flex:1; }
+        .time{ display:block; float:right; line-height:20px; }
         .switch-hr{ height:20px; width:100%; background-color:#487fd9; margin-top:10px; margin-bottom:10px; border-radius:5px; }
         /* footer */
         .foot-link{ width:98%; margin:0 auto;  }
@@ -57,16 +62,52 @@
     <div class="switch-img">
         <!-- 图片/院内新闻列表 -->
         <div class="other-left">
-            轮播图
+            <div class="layui-carousel" id="test1" lay-filter="test1">
+                <div carousel-item="">
+                    <div>条目1</div>
+                    <div>条目2</div>
+                    <div>条目3</div>
+                    <div>条目4</div>
+                    <div>条目5</div>
+                </div>
+            </div>
         </div>
         <div class="other-right">
-            {pc:content action="lists" catid="10" order="listorder DESC" num="4" return="data"}
-            <ul>
-                {loop $data $val}
-                <li><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span>{date('Y-m-d', $val[updatetime])}</span></li>
-                {/loop}
+            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#bulletin" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-globe">&nbsp;院内新闻</span></a></li>
+                <li><a href="#rule" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-expand">&nbsp;媒体聚焦</span></a></li>
+                <li><a href="#forum" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-bullhorn">&nbsp;本院公告</span></a></li>
             </ul>
-            {/pc}
+            <!-- 选项卡面板 -->
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="bulletin">
+                    {pc:content action="lists" catid="10" order="listorder DESC" num="4" return="data"}
+                    <ul>
+                        {loop $data $val}
+                            <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                        {/loop}
+                    </ul>
+                    {/pc}
+                </div>
+                <div class="tab-pane fade" id="rule">
+                    {pc:content action="lists" catid="11" order="id desc" num="10" return="data"}
+                    <ul>
+                        {loop $data $val}
+                        <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                        {/loop}
+                    </ul>
+                    {/pc}
+                </div>
+                <div class="tab-pane fade" id="forum">
+                    {pc:content action="lists" catid="12" order="id desc" num="10" return="data"}
+                    <ul>
+                        {loop $data $val}
+                        <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                        {/loop}
+                    </ul>
+                    {/pc}
+                </div>
+            </div>
         </div>
     </div>
     <div class="switch-hr"></div>
