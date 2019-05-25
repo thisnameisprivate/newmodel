@@ -14,7 +14,7 @@
 <body>
 <div class="catbanner"><a href="javascript:;"  onclick="openZoosUrl();LR_HideInvite();return false;" rel="nofollow"></a></div>  <div class="mainContent">
     <div class="wrap clearfix">
-        <div class="ljdh"><a href="/">首页</a> &gt; <a href="http://www.gyxhyy.com/gyxh/">医院新闻</a> > <a href="http://www.gyxhyy.com/gyxh/yyxw/">院内新闻</a> > </div>
+        <!--<div class="ljdh"><a href="/">首页</a> &gt; <a href="http://www.gyxhyy.com/gyxh/">医院新闻</a> > <a href="http://www.gyxhyy.com/gyxh/yyxw/">院内新闻</a> > </div>-->
         <div class="leftCon">
             <!--<dl class="mulu">-->
                 <!--<dt><a href='javascript:;'>快速导航</a></dt>-->
@@ -29,19 +29,17 @@
                 <!--<dd><a href="http://www.gyxhyy.com/gyxh/ybzc/">医保之窗</a></dd>-->
             <!--</dl>-->
         </div>
-        {pc:content action="lists" relation="$relation" id="$id+1" catid="$catid" keywords="$rs[keywords]" moreinfo=1}
-        {loop $data $r}
+        {pc:content action="lists" catid="$catid" moreinfo="1"}
         <div class="rightCon">
-        <h2>{$r[title]}</h2>
+        <h2>{$data[$_GET[id]][title]}</h2>
         <span class="sjsj">
           <span class="sjsj_l">
-            <em>发布时间：{date("Y-m-d H:i:s", $r[updatetime])}</em>
-            <em>来源：{$r[copyfrom]}</em>
+            <em>发布时间：{date("Y-m-d H:i:s", $data[$_GET[id]][updatetime])}</em>
+            <em>来源：{$data[$_GET[id]][copyfrom]}</em>
           </span>
         </span>
-            <p class="jjjj">{$r[keywords]}</p>
-            <p>{$r[content]}</p>
-        {/loop}
+            <p class="jjjj">{$data[$_GET[id]][keywords]}</p>
+            <p>{$data[$_GET[id]][content]}</p>
         {/pc}
 
     </div>
