@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="author" content="cgfreeman" />
+    <title>移动医疗的归宿是否是互联网医院 - 广元协和医院官方网站</title>
+    <meta name="keywords" content="移动医疗,,互联网,,医院,,归宿" />
+    <meta name="description" content="特别是是在线问诊、在线咨询。移动医疗的存在形式很多，有在线问诊、医生社区、上门送药等等，但从患者的角度来看，接地气的还是在线问诊，只不过用户习惯尚未养成。" />
+    <script type="text/javascript" src="http://app.gyxhyy.com/statics/skin/js/redirect.js" ></script>
+    <link type="text/css" rel="stylesheet" href="http://app.gyxhyy.com/statics/simple/css/base.css">
+    <link type="text/css" rel="stylesheet" href="http://app.gyxhyy.com/statics/simple/css/otherPage.css">
+    <script type="text/javascript" src="http://app.gyxhyy.com/statics/simple/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+{template "content", "header"}
+<div class="catbanner"><a href="javascript:;"  onclick="openZoosUrl();LR_HideInvite();return false;" rel="nofollow"></a></div>
+<div class="mainContent">
+    <div class="wrap clearfix" style="height:500px;">
+        <!--<div class="ljdh"><a href="/">首页</a> &gt; <a href="http://www.gyxhyy.com/gyxh/">医院新闻</a> > <a href="http://www.gyxhyy.com/gyxh/yyxw/">院内新闻</a> > </div>-->
+        <div class="leftCon">
+            <!--<dl class="mulu">-->
+            <!--<dt><a href='javascript:;'>快速导航</a></dt>-->
+            <!--<dd><a class="now" href="http://www.gyxhyy.com/gyxh/yyxw/">医院新闻</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/mtbd/">媒体报道</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/gyjz/">公益救助</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/zlsb/">诊疗设备</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/xjlf/">诊疗技术</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/ryzz/">荣誉资质</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/yyhj/">医院环境</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/jyzn/">就医指南</a></dd>-->
+            <!--<dd><a href="http://www.gyxhyy.com/gyxh/ybzc/">医保之窗</a></dd>-->
+            <!--</dl>-->
+        </div>
+            {pc:content action="lists" catid="$catid" num="25"  order="listorder DESC" return="data"}
+                {loop $data $r}
+                    <div>
+                        <p><a href="{$r[url]}">{$r[title]}</a><span class="time">{date('Y-m-d', $r[updatetime])}</span></p>
+                    </div>
+                {/loop}
+            {/pc}
+        </div>
+    </div>
+</div>
+{template "content", "footer"}
