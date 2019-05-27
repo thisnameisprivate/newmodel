@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta content="telephone=no" name="format-detection">
     <meta name="author" content="cgfreeman" />
-    <title>移动医疗的归宿是否是互联网医院 - 广元协和医院官方网站</title>
-    <meta name="keywords" content="移动医疗,,互联网,,医院,,归宿" />
-    <meta name="description" content="特别是是在线问诊、在线咨询。移动医疗的存在形式很多，有在线问诊、医生社区、上门送药等等，但从患者的角度来看，接地气的还是在线问诊，只不过用户习惯尚未养成。" />
+    {pc:content action="lists" catid="$catid" moreinfo="1"}
+    <title>{$data[$_GET[id]][title]}</title>
+    {/pc}
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
     <script type="text/javascript" src="http://app.gyxhyy.com/statics/skin/js/redirect.js" ></script>
     <link type="text/css" rel="stylesheet" href="http://app.gyxhyy.com/statics/simple/css/base.css">
     <link type="text/css" rel="stylesheet" href="http://app.gyxhyy.com/statics/simple/css/otherPage.css">
@@ -32,8 +34,8 @@
                 <!--<dd><a href="http://www.gyxhyy.com/gyxh/ybzc/">医保之窗</a></dd>-->
             <!--</dl>-->
         </div>
-        {pc:content action="lists" catid="$catid" moreinfo="1"}
         <div class="rightCon">
+            {pc:content action="lists" catid="$catid" moreinfo="1"}
         <h2>{$data[$_GET[id]][title]}</h2>
         <span class="sjsj">
           <span class="sjsj_l">

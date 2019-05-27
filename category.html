@@ -32,16 +32,12 @@
             <!--<dd><a href="http://www.gyxhyy.com/gyxh/ybzc/">医保之窗</a></dd>-->
             <!--</dl>-->
         </div>
-            {pc:content action="lists" catid="$catid" num="25"  order="listorder DESC" return="data"}
-                {loop $data $r}
-                    <div>
-                        <p>
-                            <a href="{$r[url]}">{$r[title]}</a><span class="time">{date('Y-m-d', $r[updatetime])}</span>
-                        </p>
-                    </div>
-                {/loop}
-            {/pc}
-        </div>
+        {pc:content action="category" catid="$catid" return="data"}
+        {loop $data $r}
+            <img style="width:160px; height:120px;" src="{$r[image]}" alt="">
+        {/loop}
+        {/pc}
     </div>
+</div>
 </div>
 {template "content", "footer"}
