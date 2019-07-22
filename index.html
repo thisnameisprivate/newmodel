@@ -3,6 +3,59 @@
 <div class="top-propaganda-img">
     <img src="{APP_PATH}/statics/simple/images/top-propaganda-img.png" alt="">
 </div>
+<div class="doctor-team">
+    <div class="switch-other">
+        <div class="layui-carousel" id="doctor-team" lay-filter="doctor-team">
+            <div carousel-item="">
+                <div class="active-team">
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor1.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor3.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor4.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor5.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="active-team">
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor6.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor7.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor8.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor9.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor10.jpg" alt="">
+                    </div>
+                </div>
+                <div class="active-team">
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor11.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="{APP_PATH}/statics/doctor/doctor12.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+</div>
+</div>
 <div class="switch-img">
         <!-- 图片/院内新闻列表 -->
         <div class="other-left">
@@ -35,7 +88,7 @@
                     {pc:content action="lists" catid="13" order="listorder DESC" num="4" return="data"}
                     <ul>
                         {loop $data $val}
-                            <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                            <li style="font-size:1.7rem;">&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
                         {/loop}
                     </ul>
                     {/pc}
@@ -44,7 +97,7 @@
                     {pc:content action="lists" catid="14" order="id desc" num="10" return="data"}
                     <ul>
                         {loop $data $val}
-                        <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                        <li style="font-size:1.7rem;">&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
                         {/loop}
                     </ul>
                     {/pc}
@@ -53,7 +106,7 @@
                     {pc:content action="lists" catid="15" order="id desc" num="10" return="data"}
                     <ul>
                         {loop $data $val}
-                        <li>&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
+                        <li style="font-size:1.7rem;">&nbsp;<span class="glyphicon glyphicon-hand-right">&nbsp;</span><a href="{$val[url]}">{str_cut($val[title], '100', '...')}</a><span class="time">{date('Y-m-d', $val[updatetime])}</span></li>
                         {/loop}
                     </ul>
                     {/pc}
